@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles\styles.css' %}">
+</head>
+<body>
+    {% block content %}
+    
+    {% for StaffMember in staffmember %}
+            <div class="col-md-4">
+                    {{ StaffMember.name }}
+                    {{ StaffMember.mobile_number }}
+                    {{ StaffMember.email }}
+                    {{ StaffMember.information }}
+                    
+                     <img src="{{ PccMember.image.url }}" style="width: 25%" />
+            </div>
+    {% endfor %}
+
+
+    {% endblock %}
+    </center> 
+</body>
+</html>

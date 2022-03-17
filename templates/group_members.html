@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+        {% block content %}
+        <body>
+          <div  class = "info" style = "background: #d8dbdb; height: 100vh;">
+            <div class="col-md-12" style = "background: #d8dbdb;">
+          <center>  <BR/><BR/>
+      
+               
+                <h5>ACK ST. MARTIN'S GRUOP MEMBERS</h5>
+                <hr>
+                <div class="card card-body" style = "background-color: azure;">
+                  <div class="card card-body"  style = "background-color: azure;" >
+                  <form action="" method="GET" style = "background: azure;">
+                    {% csrf_token%}
+             
+                    <label for="name">Department Name:</label>
+                <select name="group">
+                {% for cluster in cluster %}
+                    <option value="{{ cluster.name }}">{{ cluster.name }}</option>
+                {% endfor %}
+                {% for department in department %}
+                    <option value="{{ department.name }}">{{ department.name }}</option>
+                {% endfor %}
+                {% for ministry in ministry %}
+                    <option value="{{ ministry.name }}">{{ ministry.name }}</option>
+                {% endfor %}
+                </select>
+                <input type = "submit" value = "confirm group" style ="color:green;"><i class="fa-solid fa-arrow-right"></i>
+                       </form>
+        <table class="table table-sm">
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Membership Number</th>
+
+          </tr>
+  
+          {% for Account in queryset %}
+            <tr>
+              <td>{{Account.first_name}}</td>
+              <td>{{Account.last_name}}</td>
+              <td>{{Account.email}}</td>
+              <td>{{Account.membership_number}}</td>
+              <td>{{Account.mobile_number}}</td>
+            </tr>
+            {% empty %}
+          {% endfor %}
+          {% for Dependent in query %}
+ <tr>
+  
+   <td>{{ Dependent.first_name }}</td>
+   <td>{{ Dependent.last_name }}</td>
+   <td>{{ Dependent.dep_em }}</td>
+   <td>{{ Dependent.membership_number }}</td>
+   <td>{{ Dependent.mobile_number }}</td>
+  
+   
+ </tr>
+ {% empty %}
+ {% endfor %}
+  
+</div>
+      </table>
+      <h2><a href="{% url 'superuser_home' %}">go back<i class="fa-solid fa-arrow-right"></i></a></h2>
+        </center>
+        </div>
+        </div>
+        {% endblock %}

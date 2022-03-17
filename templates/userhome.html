@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block content %}
+    
+     
+        <div class="menu" id="menu" style = "background-color: #cff1e9;">
+            <div class="about_content">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} m-2" id="msg" role="alert">
+                {{ message }}
+                </div> 
+                {% endfor %}
+                {% endif %}
+                
+                <div class="icon" style="align-items: center;">
+                   
+                    <a href="{% url 'update_account' %}" class="icon_individual">
+                        <i class="fa-solid fa-user-pen fa-7x" style="margin-top: 0.1em; color:rgb(40, 228, 40)!important"></i>
+                        <h4 style="color:rgb(25, 27, 25)!important; margin-top: 0em;">update account </h4>
+                    </a>
+                    <a href="{% url 'profile' %}"div class="icon_individual">
+                        <i class="fa-regular fa-id-card fa-7x" style="margin-top: 0.1em; color:rgb(33, 43, 175)!important"></i>
+                        <h4 style="color:rgb(25, 27, 25)!important; margin-top: 0em;">Profile</h4>
+                    </a>                    
+                    
+                    <a href="{% url 'dependent_list' %}" class="icon_individual">
+                        <i class="fa-solid fa-list-ul fa-7x" tyle="margin-top: 0.1em; color: rgb(100, 216, 231)!important"></i>
+                        <h4 style="color:rgb(25, 27, 25)!important; margin-top: 0em;">Dependents</h4>
+                    </a>                    
+                </div>
+                <br/><br/><br/><br/><br/>
+        </div>
+        </div>
+    
+        
+
+
+    {% endblock %}

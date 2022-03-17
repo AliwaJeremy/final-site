@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'styles\styles.css' %}"><script src="% static 'js\javascript.js' %"></script>
+    </head>
+    <body >
+        {% block content %}
+        
+        <div class="container" style="background-image: url('{% static 'images\image1.png' %}');">
+            <iv class="curr-month"><b>november</b></div>
+            <div class="all-days">
+              <ul>
+                <li>sun</li>
+                <li>mon</li>
+                <li>tue</li>
+                <li>wed</li>
+                <li>thu</li>
+                <li>fri</li>
+                <li>sat</li>
+              </ul>
+            </div>
+            <div class="all-date">
+              <ul>
+              </ul>
+            </div>
+          </div>
+      {% endblock %}
+    </body>
+</html>

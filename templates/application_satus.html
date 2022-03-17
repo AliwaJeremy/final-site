@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles\styles.css' %}">
+</head>
+<body>
+    {% block content %}
+    
+     
+        <div class="about" id="about" style="background-image: url('{% static 'images\image1.png' %}');">
+            <div class="about_content">
+                <center>
+                <table border = 1>
+                    <tr>
+                      <th>Event Name</th>
+                      <th>Date Applied</th>
+                      <th>Status</th>
+                    </tr>
+                    
+                       {% for EventApplication in app %}
+                       <tr>
+                        <td>{{ EventApplication.event_name }}</td> 
+                        <td>{{ EventApplication.date_applied }}</td>
+                        <td>{{ EventApplication.application }}</td>
+                       </tr>
+                       
+                       {% endfor %}
+                    
+                  </table>
+                </center>
+                 <BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/>
+                 <BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><br/><br/><br/><br/><br/><br/><br/><br/>
+                 
+            </div>
+        </div>
+    
+        
+
+
+    {% endblock %}
+    
+</body>
+</html>

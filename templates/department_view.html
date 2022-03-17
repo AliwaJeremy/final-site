@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles\styles.css' %}">
+</head>
+<body>
+    {% block content %}
+    <br/><br/><br/><br/>
+  <center>  
+    <h1>
+        accounts
+    </h1>
+    
+      
+       <table border = 1>
+         <tr>
+           <th>Email</th>
+           <th>First Name</th>
+           <th>Last Name</th>
+           <th>Phone Number</th>
+           <th>Talent</th>
+         </tr>
+         
+            {% for Account in List %}
+            <tr>
+             <td>{{ Account.email }}</td>
+             <td>{{ Account.first_name }}</td>
+             <td>{{ Account.last_name }}</td>
+             <td>{{ Account.mobile_number }}</td>
+             {% for department in Account.department.all %}
+             <td>{{ department }}</td>
+            </tr>
+            {% endfor %}
+            {% endfor %}
+            {% for Dependent in Lists %}
+            <tr>
+             <td>{{ Dependent.dep_em }}</td>
+             <td>{{ Dependent.first_name }}</td>
+             <td>{{ Dependent.last_name }}</td>
+             <td>{{ Dependent.mobile_number }}</td>
+             {% for department in Dependent.department.all %}
+             <td>{{ department }}</td>
+            </tr>
+            {% endfor %}
+            {% endfor %}
+         
+       </table>
+       <h2><a href="{% url 'superuser_home' %}">go back</a></h2>
+          
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+    {% endblock %}
+    </center> 
+</body>
+</html>

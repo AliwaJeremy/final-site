@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'styles\styles.css' %}">
+    </head>
+    <body >
+        {% block content %}
+    
+      <div class="row">
+    </br></br></br></br></br></br></br></br></br>
+    <div class="col-md-12" id="col-md-12" style="background-image: url('{% static 'images\image1.png' %}');">
+    
+      
+        <center>
+          <form method="POST" action ="" >
+            {% csrf_token %}
+            
+            <table border = 1>
+               
+                <tr>
+                    <td>First Name</td>
+                    <td>{{form.first_name}}</td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td>{{form.last_name}}</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>{{form.dep_em}}</td>
+                </tr>
+                <tr>
+                    <td>Mobile Number</td>
+                    <td>{{form.mobile_number}}</td>
+                </tr>
+                
+                
+            </table>
+            <input type="submit" value ="Update"/> |
+            <a href="{% url 'dependent_all' %}">Go Back </a>
+        </form>
+        </center>
+
+        </div>
+      </div>
+      {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>members</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles\styles.css' %}">
+</head>
+<body>
+    {% block content %}
+    
+
+    <div class="department" id="department">
+        
+        <div class="member_content" id="member_content">
+            <h1 class="title">church members</h1>
+            <p>the following are our church members.....</p>
+        </div>
+
+        <div class="department_wrapper">
+            <div class="dept-1 dept">
+                <div class="dept_member">
+                    <a href="{% url 'staff_members' %}">
+                    <img src="{% static 'images\image2.png' %}" alt="dept_Image">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        
+
+
+    {% endblock %}
+    
+</body>
+</html>

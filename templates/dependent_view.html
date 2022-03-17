@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'styles\styles.css' %}">
+    </head>
+    <body >
+        {% block content %}
+    
+      <div class="row">
+    </br></br></br></br></br></br></br></br></br>
+    <div class="col-md-12" id="col-md-12" style="background-image: url('{% static 'images\image1.png' %}');">
+    
+      
+        <center>
+            
+            <table border = 1>
+               
+                <tr>
+                    <td>First Name</td>
+                    <td><input type="text" name="last_name" value="{{List.first_name}}" readonly = True></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td><input type="text" name="last_name" value="{{List.last_name}}" readonly = True></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" name="last_name" value="{{List.dep_em}}" readonly = True></td>
+                </tr>
+                <tr>
+                    <td>Mobile Number</td>
+                    <td><input type="text" name="last_name" value="{{List.mobile_number}}" readonly = True></td>
+                </tr>
+                <tr>
+                    <td>Membership Number</td>
+                    <td><input type="text" name="last_name" value="{{List.mebership_number}}" readonly = True></td>
+                </tr>
+                <tr>
+                    <td>Relationship</td>
+                    <td><input type="text" name="last_name" value="{{List.relationship}}" readonly = True></td>
+                </tr>
+                
+            </table>
+            <a href="{% url 'userhome' %}">Go Back </a>
+       
+        </center>
+
+        </div>
+      </div>
+      {% endblock %}
+    </body>
+</html>

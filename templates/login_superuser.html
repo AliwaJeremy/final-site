@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'styles\styles.css' %}">
+    </head>
+    <body >
+        {% block content %}
+    
+      <div class="row">
+    </br></br></br></br></br></br></br></br></br>
+    <div class="col-md-12" id="col-md-12" style="background-image: url('{% static 'images\image1.png' %}');">
+      <form method="post" class = "post-form" action="" >
+
+        {% csrf_token %}
+        <h1> Register for ACK Wendani</h1>
+
+        <fieldset>
+         
+          
+          <legend>new login</legend>
+        
+          <label for="username">Email:</label>
+          <input type="text" id="username" placeholder = "Email" name="username">
+       
+          <label for="password">Password:</label>
+          <input type="password" id="password" placeholder = "Password" name="password">
+        
+
+        </fieldset>
+       
+      
+
+        <button type="submit">Login</button>
+        {% for message in messages %}
+        <div style="color:red">
+         <p id = "messages">{{message}}</p>
+        </div>
+        {% endfor %}
+        <p>Dont have an account, register<a href="{% url 'register' %}">here</a></br></p>
+					<a class="m-auto" href="{% url 'password_reset' %}">Reset password</a></br>
+          <a class="m-auto" href="{% url 'login' %}">Back to normal login</a>
+       </form>
+       
+    
+        </div>
+      </div>
+      {% endblock %}
+    </body>
+</html>

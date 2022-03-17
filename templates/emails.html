@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block content %}
+    
+    
+        <div class="menu" id="menu" style = "background-color: #cff1e9;">
+            <div class="about_content">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} m-2" id="msg" role="alert">
+                {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+                <br/>
+                <h2 style="color:rgb(25, 27, 25)!important; margin-top: 0em;">Send Emails</h2></a><hr/>
+                <div class="icon">
+                    
+                    <a href="{% url 'send_email' %}">
+                    <div class="icon_individual" >
+                        <i class="fa-solid fa-user fa-7x" style="margin-top: 0.1em; color:rgb(58, 221, 226)!important"></i>
+                        <h4 style="color:rgb(25, 27, 25)!important; margin-top: 0em;">Email to individuals</h4></a>
+                    </div>
+                    
+                    <a href="{% url 'email_department' %}">
+                    <div class="icon_individual">
+                        <i class="fa-solid fa-user-group fa-7x" style="margin-top: 0.1em; color:rgb(26, 99, 167)!important"></i>
+                        <h4 style="color:rgb(25, 27, 25)!important; margin-top: 0em;">Email to groups</h4></a>
+
+                    </div>    
+                    <a href="{% url 'send_all' %}">    
+                    <div class="icon_individual">
+                        <i class="fa-solid fa-users fa-7x" style="margin-top: 0.1em; color:rgb(13, 18, 87)!important"></i>
+                        <h4 style="color:rgb(25, 27, 25)!important; margin-top: 0em;"> Email to all members </h4></a>
+                    </div>
+                    
+                   </div>
+                   
+                   <br/> <hr/>
+                <h2><a href="{% url 'superuser_home' %}">go back<i class="fa-solid fa-arrow-right"></i></a></h2>
+                
+                <br/><br/><br/><br/>
+            </div>
+        </div>
+    
+        
+
+
+    {% endblock %}

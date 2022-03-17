@@ -1,0 +1,2 @@
+Hello {{ account }} - your account is created. Copy the link on your browser to finish registration and reset your password
+"{% url 'password_reset' %}" Your membership number is: {{ membership_number }}

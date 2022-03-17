@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+    {% block content %}
+    
+    
+            <div class="menu" style = "background-color: #cff1e9;" >
+                <div class="about_content">
+
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} m-2" id="msg" role="alert">
+                {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+               
+                <div class="icon">
+                    
+                    <a href="{% url 'register' %}" class="icon_individual" >
+                        <i class="fa-solid fa-user-plus fa-7x" style="margin-top: 0.1em; color:rgb(40, 228, 40)!important"></i>
+                        <h4 style="color:rgb(25, 27, 25)!important; margin-top: 0em;">Register User Automatic</h4>
+                    </a>
+                    <a href="{% url 'register_manual' %}" class="icon_individual">
+                        <i class="fa-solid fa-user-plus fa-7x" style="margin-top: 0.1em; color:rgb(40, 228, 40)!important"></i>
+                        <h4 style="color:rgb(25, 27, 25)!important; margin-top: 0em;">Register User Manual</h4>
+                    </a>   
+                    <a href="{% url 'account_list' %}" class="icon_individual">
+                        <i class="fa-regular fa-eye fa-7x" style="margin-top: 0.1em; color:rgb(33, 43, 175)!important"></i>
+                        <h4 style="color:rgb(25, 27, 25)!important; margin-top: 0em;">View Church Members </h4>
+                    </a>
+                   </div>
+                <div class="icon">
+                    <a href="{% url 'filter_all' %}" class="icon_individual">
+                        <i class="fa-solid fa-magnifying-glass fa-7x" style="margin-top: 0.1em; color:rgb(33, 43, 175)!important"></i>
+                        <h4 style="color:rgb(25, 27, 25)!important; margin-top: 0em;">Search for accounts</h4>
+                    </a>
+                    <a href="{% url 'dependent_filter' %}" class="icon_individual">
+                        <i class="fa-solid fa-eye fa-7x" style="margin-top: 0.1em; color:rgb(33, 43, 175)!important"></i>
+                        <h4 style="color:rgb(25, 27, 25)!important; margin-top: 0em;">View dependents </h4>
+                    </a>
+                    <a href="{% url 'group_members' %}" class="icon_individual">
+                        <i class="fa-solid fa-list-ul fa-7x" style="margin-top: 0.1em; color:rgb(33, 43, 175)!important"></i>
+                        <h4 style="color:rgb(25, 27, 25)!important; margin-top: 0em;">Display Group Members </h4>
+                    </a>
+                </div>
+                <div class="icon">                   
+                    <a href="{% url 'send_smss' %}" class="icon_individual">
+                        <i class="fa-solid fa-comment-sms fa-7x" style="margin-top: 0.1em; color:rgb(100, 216, 231)!important"></i>
+                        <h4 style="color:rgb(25, 27, 25)!important; margin-top: 0em;"> Send Messages</h4>
+                    </a>
+                    <a href=" {% url 'emails' %} " class="icon_individual">
+                        <i class="fa-solid fa-paper-plane fa-7x" style="margin-top: 0.1em; color: rgb(100, 216, 231)!important"></i>
+                        <h4 style="color:rgb(25, 27, 25)!important; margin-top: 0em;">Send Emails </h4>
+                    </a>
+                    <a href="{% url 'add_staffmember' %}" class="icon_individual">
+                            <i class="fa-solid fa-user-plus fa-7x" style="margin-top: 0.1em; color:rgb(40, 228, 40)!important"></i>
+                            <h4 style="color:rgb(25, 27, 25)!important; margin-top: 0em;">Add Staff Member</h4>
+                    </a>
+                </div>
+               
+               
+                   
+                    
+                    
+                   </div>
+            </div> 
+       
+        
+            <script> 
+                var message_ele = document.getElementById("messages");
+            
+                setTimeout(function(){ 
+                message_ele.style.display = "none"; 
+                }, 3000);
+            </script>
+
+    {% endblock %}

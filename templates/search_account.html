@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>accounts</title>
+</head>
+<body>
+    <form method = POST action = "{% url 'search_account' %}">
+        {% csrf_token %}
+        <input class = "" type = "search" placeholder = "Search Account" aria-label = "Search" name = "searched">
+        <button class = "" type = "submit">Search</button>
+    </form>
+    {% block content %}
+
+
+    {% if searched %}
+      <h1>you are searching for {{ searched }}</h1><br/>
+      {% for Account in Account_searched %} 
+            
+            {{ Account }} {{ Account.first_name }}
+
+      {% endfor %}
+         
+    {% else %}
+    <h1>none</h1>
+    {% endif %}
+
+   
+    {% endblock %}
+</body>
+</html>
+

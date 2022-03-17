@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles\styles.css' %}">
+</head>
+<body>
+    {% block content %}
+    
+
+    <div class="department" id="department">
+        <h1 class="title">Register</h1>
+        <div class="deptinfo_content" id="deptinfo_content">
+            <p>Register for ACK Wendani</p>
+        </div>
+
+        <div class="department_wrapper">
+        
+                <div class="dept_member">
+                    <a href="{% url 'register' %}">
+                    <img src="{% static 'images\image2.png' %}" alt="dept_Image">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        
+
+
+    {% endblock %}
+    
+</body>
+</html>

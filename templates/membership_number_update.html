@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles\styles.css' %}">
+</head>
+<body>
+    {% block content %}
+    
+    
+        <div class="about" id="about" style="background-image: url('{% static 'images\image1.png' %}');">
+            <div class="about_content">
+               
+                <form method="post" class = "post-form" action=""  id = "submit">
+
+                    {% csrf_token %}
+                    <h1> Edit Information</h1>
+                    
+            
+                    <fieldset>
+                    
+                      {{ form }}
+                      
+            
+                    </fieldset>
+                   
+                    <button type="submit">Add Church Number</button>
+                     
+                   </form>
+                  
+            </div>
+        </div>
+    
+        
+
+
+    {% endblock %}
+    
+</body>
+</html>

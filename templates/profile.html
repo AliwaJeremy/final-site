@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block content %}
+<div class="profile py-4" style = "background-color: #cff1e9;" > 
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent text-center"><br/>
+              <h3>{{List.title}} {{List.first_name}}  {{List.last_name}}</h3>
+            </div>
+            <div class="card-body">
+              <p class="mb-0"><strong class="pr-1">Membership Number:</strong>{{List.membership_number}}</p>
+              <p class="mb-0"><strong class="pr-1">Email:</strong>{{List.email}}</p>
+              <p class="mb-0"><strong class="pr-1">Mobile Number:</strong>{{List.mobile_number}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>More Information</h3>
+            </div>
+            <div class="card-body pt-0">
+              <table class="table table-bordered">
+                <tr>
+                  <th width="30%">Profession</th>
+                  <td width="2%">:</td>
+                  <td style = "text-transform: capitalize;">{{List.profession}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Marital Status</th>
+                  <td width="2%">:</td>
+                  <td>{{List.marital_status}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Cluster</th>
+                  <td width="2%">:</td>
+                  <td >{% for cluster in cluster %}<p style = "text-transform: uppercase;">{{cluster}}</p>{% include "comma.html" %}{% endfor %}</td>
+                </tr>
+                
+                <tr>
+                  
+                  <th width="30%">Department</th>
+                  <td width="2%">:</td>
+                  <td >{% for department in department %}<p style = "text-transform: uppercase;">{{department}}</p>{% include "comma.html" %}{% endfor %}</td
+                  
+                </tr>
+                <tr>
+                  <th width="30%">Ministry</th>
+                  <td width="2%">:</td>
+                  <td >{% for ministry in ministry %}<p style = "text-transform: uppercase;">{{ministry}}</p>{% include "comma.html" %}{% endfor %}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+            <div style="height: 26px"></div>
+          
+        </div>
+      </div>
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </div>
+  </div>
+  {% endblock %}

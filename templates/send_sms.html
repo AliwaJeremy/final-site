@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles\styles.css' %}">
+</head>
+<body>
+    {% block content %}
+    
+    
+        <div class="about" id="about" style = "background-color: #cff1e9;">
+            <div class="about_content">
+               <form action = "" method = "POST">
+                   {% csrf_token %}
+                <label for="name">Recepient:</label>
+                <input type="text" name="recepient" required/>
+        
+                <label for="email">Message:</label>
+                <textarea name ="message" cols = "30" rows = "10" required></textarea>
+
+                <button type="submit">Send Message</button>
+                </form>
+                <a href="{% url 'send_smss' %}">go back<i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    
+        
+    
+
+    {% endblock %}
+    
+</body>
+</html>

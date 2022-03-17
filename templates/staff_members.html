@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles\styles.css' %}">
+</head>
+<body>
+    {% block content %}
+    
+    <div class="row">
+  </br></br></br></br></br></br></br></br></br>
+  <div class="col-md-12" id="col-md-12" style="background-image: url('{% static 'images\image1.png' %}');">
+    <div class = "row">
+                
+        <div class="leaders">
+            {% for member in staffmember %}
+            <div class="leader_individual">
+                    <img src="{% static 'images\image2.png' %}" alt="Service_image">
+                    <h3>{{ member.name }}</h3>
+                    <h3>{{ member.email }}</h3>
+                    <h3>{{ member.mobile_number }}</h3>
+    
+            </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      </div>
+      </div>
+    
+   
+
+    {% endblock %}
+</body>
+</html>
+

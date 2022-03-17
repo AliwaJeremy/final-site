@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles\styles.css' %}">
+</head>
+<body>
+    {% block content %}
+    <div class="about" id="about" style="background-image: url('{% static 'images\image1.png' %}')">
+    <center>  
+      
+      <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+     
+      <form action="" method="POST">
+        {% csrf_token %}
+          Birth Date From:<input type = "date" name = 'fromdate'/>
+          To:<input type = "date" name = 'todate'/>
+          <input type = "submit" value = "Search"/>
+
+       </form> 
+        
+         <table border = 1>
+           <tr>
+             <th>Email</th>
+             <th>First Name</th>
+             <th>Last Name</th>
+             <th>Membership Number</th>
+             <th>Phone Number</th>
+           </tr>
+           
+              {% for Account in List %}
+              <tr>
+               <td>{{ Account.email }}</td>
+               <td>{{ Account.first_name }}</td> 
+               <td>{{ Account.last_name }}</td>
+               <td>{{ Account.membership_number }}</td>
+               <td>{{ Account.mobile_number }}</td>
+              </tr>
+              
+              {% endfor %}
+           
+         </table>
+         <h2><a href="{% url 'superuser_home' %}">go back</a></h2>
+         {% for message in messages %}
+                  <div style="color:red">
+                  {{message}}
+                  </div>
+                  {% endfor %}
+      
+          
+                  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    
+                </div>
+                </center>
+    {% endblock %}
+   
+  
+</body>
+</html>
+
+

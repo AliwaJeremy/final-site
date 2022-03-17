@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block content %}
+
+    <div class="department" id="department">
+        <h1 class="title">departments</h1>
+        <div class="deptinfo_content" id="deptinfo_content">
+            <p>Congregants are offered a chance to congregate with others of similar.....</p>
+        </div>
+
+        <div class="department_wrapper">
+            <div class="dept-1 dept">
+                <div class="dept_member">
+                    <a href="{% url 'mu' %}">
+                    <img src="{% static 'images\image2.png' %}" alt="dept_Image">
+                    </a>
+                </div>
+                <div class="dept_member">
+                    <a href="{% url 'kama' %}">
+                    <img src="{% static 'images\image2.png' %}" alt="dept_Image">
+                    </a>
+                </div>
+            </div>
+            <div class="dept-2 dept">
+                <div class="dept_member">
+                    <a href="{% url 'sundayschool' %}">
+                    <img src="{% static 'images\image2.png' %}" alt="dept_Image">
+                    </a>
+                </div>
+                <div class="dept_member">
+                    <a href="{% url 'youth' %}">
+                    <img src="{% static 'images\image1.png' %}" alt="dept_Image">
+                    </a>
+                </div>
+            </div>
+            <div class="dept-1 dept">
+                <div class="dept_member">
+                    <a href="{% url 'teens' %}">
+                    <img src="{% static 'images\image2.png' %}" alt="dept_Image">
+                    </a>
+                </div>
+                <div class="dept_member">
+                    <a href="{% url 'clusters' %}">
+                    <img src="{% static 'images\image2.png' %}" alt="dept_Image">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        
+
+
+    {% endblock %}

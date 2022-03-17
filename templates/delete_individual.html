@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+        {% block content %}
+    
+        <div class="menu" id="menu" style = "background-color: #cff1e9;">
+            <div class="about_content">
+      <br/><br/><br/><br/>
+      <form method="post" class = "post-form" action=""  id = "submit" >
+
+       
+        {% csrf_token %}
+        <table border = "1">
+            <tr>
+                <td>Name </td>
+                <td><input type ="text" name = "first_name" value = "{{List.first_name}} {{List.last_name}}" readonly/></td>
+            </tr>
+        </table>
+        <h5 style = "text-transform: capitalize;">Delete {{ List.first_name }}&nbsp;{{ List.last_name }}'s Account</h5>
+        <input type = "submit" value = "yes">
+        <a href = "{% url 'account_list' %}" class = "btn btn-sm btn-danger">cancel</a>
+    </form>
+    </div>
+    </div>
+       
+
+    {% endblock %}

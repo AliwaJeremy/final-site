@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>account individual</title>
+</head>
+<body>
+    {% block content %}
+
+<h1>
+    account individual
+</h1>
+{% for Account in List %}
+
+<a href = "{% url 'show_individual' Account.id %}" class = "btn btn-sm btn-danger">{{ Account }}</a><br/>
+
+{% endfor %}
+
+
+    {% endblock %}
+</body>
+</html>
+

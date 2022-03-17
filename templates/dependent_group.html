@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'styles\styles.css' %}">
+    </head>
+    <body >
+        {% block content %}
+    
+      <div class="row">
+    </br></br></br></br></br></br></br></br></br>
+    <div class="col-md-12" id="col-md-12" style="background-image: url('{% static 'images\image1.png' %}');">
+      
+      
+      <form method="post" class = "post-form" action=""  id = "submit">
+
+        {% csrf_token %}
+        
+
+        <fieldset>
+          <label for="department">Department:</label>
+          {{ form.department }}
+          <label for="department">Ministry:</label>
+          {{ form.ministry }}
+          <label for="department">Cluster:</label>
+          {{ form.cluster }}
+ 
+        </fieldset>
+       
+        <button type="submit">Update Group</button>
+        
+        
+       </form>
+      
+       <BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/>
+        </div>
+      </div>
+      {% endblock %}
+    </body>
+</html>

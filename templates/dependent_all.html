@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles\styles.css' %}">
+</head>
+<body>
+    {% block content %}
+    
+    
+        <div class="about" id="about" style="background-image: url('{% static 'images\image1.png' %}')">
+            <div class="about_content">
+               
+              <center>  
+    
+                <a href = "{% url 'dependent_filter' %}">search for dependents</a>
+                  
+                   <table border = 1>
+                     <tr> 
+                       <th>Email</th>
+                       <th>First Name</th>
+                       <th>Last Name</th>
+                       <th>Membership Number</th>
+                     </tr>
+                     
+                        {% for Dependent in List %}
+                        <tr>
+                         <td>{{ Dependent.first_name }}</td>
+                         <td>{{ Dependent.last_name }}</td>
+                         <td>{{ Dependent.dep_em }}</td>
+                         <td>{{ Dependent.membership_number }}</td>
+                         <td><a href = "{% url 'superdependent_update' Dependent.id %}">Edit</a></td>
+                         <td><a href = "{% url 'dependent_delete' Dependent.id %}">Delete</a></td>
+                         <td><a href = "{% url 'dependent_group' Dependent.id %}">Register Group</a></td>
+                        </tr>
+                        
+                        {% endfor %}
+                     
+                   </table>
+                   <h2><a href="{% url 'superuser_home' %}">go back</a></h2>
+                   {% for message in messages %}
+                            <div style="color:red">
+                            {{message}}
+                            </div>
+                            {% endfor %}
+                
+                    
+              
+                          </center>  
+<BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/>
+            </div>
+        </div>
+    
+        
+
+
+    {% endblock %}
+    
+</body>
+</html>

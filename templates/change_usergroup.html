@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Details</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles\styles.css' %}">
+</head>
+<body>
+    {% block content %}
+    
+    
+        <div class="about" id="about" style="background-image: url('{% static 'images\image1.png' %}');">
+            <div class="about_content">
+               <center>
+                   <h2>make  {{List.first_name}} {{ List.last_name }} a {{ perm }}</h2>
+                   {% for message in messages %}
+                <div style="color:red">
+                {{message}}
+                </div>
+                {% endfor %}
+    
+                 <form method = "POST" action = "">
+                     {% csrf_token %}
+                   <table border = "1">
+                       <tr>
+                           <td>Name </td>
+                           <td><input type ="text" name = "first_name" value = "{{List.first_name}} {{List.last_name}}" readonly/></td>
+                       </tr>
+                   </table>
+                  
+                   <input type = "submit" value = "make user"/>|
+                   <a href = "{% url 'change_group' %}">Go Back</a>
+                   
+                </form>
+               </center>
+            
+            </div>
+        </div>
+    
+        
+
+
+    {% endblock %}
+    
+</body>
+</html>

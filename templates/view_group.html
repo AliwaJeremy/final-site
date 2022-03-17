@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+   
+        {% block content %}
+        <body >
+      <div class="row">
+    </br></br></br></br></br></br></br></br></br>
+    <div class="col-md-12" id="col-md-12" style="background-image: url('{% static 'images\image1.png' %}');">
+      
+        
+            
+           
+            
+             Department:
+             {% for department in List.department.all %}
+             {{ department }}
+             {% endfor %}
+             <br/>
+             Cluster:
+             {% for cluster in List.cluster.all %}
+             {{ cluster }}
+             {% endfor %}
+             <br/>
+             Ministry:
+             {% for ministry in List.ministry.all %}
+             {{ ministry }}
+             {% endfor %}
+             <br/>
+            
+             
+           
+         </table>
+        </center>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        </div>
+        {% endblock %}
+        </div>
+      
+     
+    </body>
+</html>

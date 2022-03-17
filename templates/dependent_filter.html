@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+        {% block content %}
+        <body>
+          <div class = "info" style = "background: #d8dbdb;"  >
+            <div class="col-md-12">
+          <center>  <BR/><BR/><BR/><BR/><BR/><BR/>
+      
+               
+                <h5>DEPENDENTS</h5>
+                <hr>
+                <div class="card card-body" style = "background-color: azure;">
+                  <div class="card card-body"  style = "background-color: azure;" >
+                    <form action="" method="GET" style = "background-color: azure;">
+                    {% csrf_token%}
+             
+                    <div class="container">
+                      <div class="search_wrap search_wrap_1">
+                        <div class="search_box">
+                          <input type="text" class="input" placeholder="search..." name = "search">
+                          <div class="btn btn_common">
+                            <button class="fas fa-search" type="submit"></button>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                       </form>
+                       </div>
+                  <table class="table table-sm">
+                    <tr>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Email</th>
+                      <th>Membership Number</th>
+                      <th>Update</th>
+                      <th>Delete</th>
+      
+                    </tr>
+                    {% for Dependent in queryset %}
+           <tr>
+            
+             <td>{{ Dependent.first_name }}</td>
+             <td>{{ Dependent.last_name }}</td>
+             <td>{{ Dependent.dep_em }}</td>
+             <td>{{ Dependent.mobile_number }}</td>
+             <td>{{ Dependent.membership_number }}</td>
+             <td><a class="btn btn-sm btn-info" href="{% url 'dependent_update' Dependent.id %}">Update</a></td>
+             <td><a class="btn btn-sm btn-danger" href="{% url 'dependent_delete' Dependent.id %}">Delete</a></td>
+            
+             
+           </tr>
+           {% empty %}
+           {% endfor %}
+            
+                
+                  </table>
+               
+              
+            
+                </div>
+                <h2><a href="{% url 'superuser_home' %}">go back<i class="fa-solid fa-arrow-right"></i></a></h2>
+          
+                      </center>
+                    </div>
+                  </div>
+                  </body>
+   
+        {% endblock %}
+ 

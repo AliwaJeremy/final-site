@@ -1,0 +1,504 @@
+#020313 dark blue
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'userhome' %}">my account</a></li>
+                <li><a href="{% url 'about' %}">about</a></li>
+                <li><a href="{% url 'logout' %}">LOGOUT {{request.user.last_name}}</a></li>
+                {% else %}
+
+                \ background-image: url('/static/images/image4.png');
+                
+                  <body >
+                    <div class="row">
+                  </br></br></br></br></br></br></br></br></br>
+                  <div class="col-md-12" id="col-md-12" style="background-image: url('{% static 'images\image1.png' %}');">
+                    <form method="post" class = "post-form" action=""  id = "submit">
+              
+                      {% csrf_token %}
+                      <h1> Register for ACK Wendani</h1>
+              
+                      <fieldset>    
+                             
+                       <label for="name">First Name:</label>
+                       {{ form.first_name }}
+                       <label for="name">Last Name:</label>
+                       {{ form.last_name }}
+                       <label for="name">Date of Birth(mm/dd/yyyy):</label>
+                       {{ form.date_of_birth }}
+                       <label for="name">Email:</label>
+                       {{ form.email }}
+                       <label for="name">Mobile Number:</label> 
+                       {{ form.mobile_number }}
+                       <label for="name">ID Number:</label> 
+                       {{ form.id_number }}
+                       <label for="name">Title:</label>
+                       {{ form.title }}
+                       <label for="name">Profession:</label>
+                       {{ form.profession }}
+                       <label for="name">Gender:</label>
+                       {{ form.gender }}
+                       <label for="name">Marital Status:</label>
+                       {{ form.marital_status }}
+                       <label for="name">Church Status:</label>
+                       {{ form.church_status }}
+                       <label for="name">Department:</label>
+                       {{ form.department }}
+                       <label for="name">Cluster:</label>
+                       {{ form.cluster }}
+                       <label for="name">Minstry:</label>
+                       {{ form.ministry }}
+                       <label for="name">Place of Residence:</label>
+                       {{ form.address }}
+                       <label for="name">Password:</label>
+                       <input type="password" name="password1" value="{{ password }}">
+                       <label for="name">Verify Password:</label>
+                       <input type="password" name="password2" value="{{ password }}">
+                      </fieldset>
+                     
+                      <button type="submit">Register</button>
+                     
+                      <p>Already have an account, login<a href="{% url 'login' %}">here</a></br></p> 
+                     </form>
+                    
+                   
+                      </div>
+                    </div>
+                  </body>
+
+
+
+                  {% extends 'base.html' %}
+                  {% load static %}
+                  {% load crispy_forms_tags %}
+                  
+                      
+                        {% block content %}
+                        <body >
+                          <div class="row">
+                        </br></br></br></br></br></br></br></br></br>
+                        <div class="col-md-12" id="col-md-12" style="background-image: url('{% static 'images\image1.png' %}');">
+                          <form method="post" class = "post-form" action=""  id = "submit">
+                    
+                            {% csrf_token %}
+                            <h1> Register for ACK Wendani</h1>
+                    
+                            <fieldset>    
+                                   
+                             <label for="name">First Name:</label>
+                             {{ form.first_name|as_crispy_field }}
+                             <label for="name">Last Name:</label>
+                             {{ form.last_name|as_crispy_field }}
+                             <label for="name">Date of Birth(mm/dd/yyyy):</label>
+                             {{ form.date_of_birth|as_crispy_field }}
+                             <label for="name">Email:</label>
+                             {{ form.email|as_crispy_field }}
+                             <label for="name">Mobile Number:</label> 
+                             {{ form.mobile_number|as_crispy_field }}
+                             <label for="name">ID Number:</label> 
+                             {{ form.id_number|as_crispy_field }}
+                             <label for="name">Title:</label>
+                             {{ form.title|as_crispy_field }}
+                             <label for="name">Profession:</label>
+                             {{ form.profession|as_crispy_field }}
+                             <label for="name">Gender:</label>
+                             {{ form.gender|as_crispy_field }}
+                             <label for="name">Marital Status:</label>
+                             {{ form.marital_status|as_crispy_field }}
+                             <label for="name">Church Status:</label>
+                             {{ form.church_status|as_crispy_field }}
+                             <label for="name">Department:</label>
+                             {{ form.department|as_crispy_field }}
+                             <label for="name">Cluster:</label>
+                             {{ form.cluster|as_crispy_field }}
+                             <label for="name">Minstry:</label>
+                             {{ form.ministry|as_crispy_field }}
+                             <label for="name">Place of Residence:</label>
+                             {{ form.address|as_crispy_field }}
+                             <label for="name">Password:</label>
+                             <input type="password" name="password1" value="{{ password }}">
+                             <label for="name">Verify Password:</label>
+                             <input type="password" name="password2" value="{{ password }}">
+                            </fieldset>
+                           
+                            <button type="submit">Register</button>
+                          
+                         
+                            </div>
+                          </div>
+                        </body>
+                        {% endblock %}
+                      
+                  
+                  
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      /* added information */
+
+
+
+      *, *:before, *:after {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+    
+    
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="email"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"],
+    textarea,
+    select {
+      background: rgba(255,255,255,0.1);
+      border: none;
+      font-size: 16px;
+      height: auto;
+      margin: 0;
+      outline: 0;
+      padding: 15px;
+      width: 100%;
+      background-color: #e8eeef;
+      color: #8a97a0;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+      margin-bottom: 30px;
+    }
+    
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin: 0 4px 8px 0;
+    }
+    
+    select {
+      padding: 6px;
+      height: 32px;
+      border-radius: 2px;
+    }
+    
+    button {
+      padding: 19px 39px 18px 39px;
+      color: #FFF;
+      background-color: #4bc970;
+      font-size: 18px;
+      text-align: center;
+      font-style: normal;
+      border-radius: 5px;
+      width: 100%;
+      border: 1px solid #3ac162;
+      border-width: 1px 1px 3px;
+      box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+      margin-bottom: 10px;
+    }
+    
+    fieldset {
+      margin-bottom: 30px;
+      border: none;
+    }
+    
+    legend {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    
+    label.light {
+      font-weight: 300;
+      display: inline;
+    }
+    
+    .number {
+      background-color: #5fcf80;
+      color: #fff;
+      height: 30px;
+      width: 30px;
+      display: inline-block;
+      font-size: 0.8em;
+      margin-right: 4px;
+      line-height: 30px;
+      text-align: center;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+      border-radius: 100%;
+    }
+    
+    @media screen and (min-width: 480px) {
+    
+      form {
+        max-width: 480px;
+      }
+    
+    }
+    
+    form {
+        max-width: 40%;
+        margin-top: 30%;
+        margin: 10px auto;
+        padding: 10px 20px;
+        background: #f4f7f8;
+        border-radius: 8px;
+        
+      }
+    
+    .col-md-12{
+        margin-top: 0%;
+    
+    }
+    
+    .login{
+        margin-bottom: 30%;
+    }
+    
+    .search ul{
+        list-style-type: none;
+    }
+    
+    
+    .apply a{
+        display:block;
+        height:80px;
+        width:250px;
+        background: linear-gradient(
+            #9365ff,
+            #6f3bff
+        );
+        position:absolute;
+        margin:auto;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        place-items: center;
+        letter-spacing: 3px;
+    
+    } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* socials */ 
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+ {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+}
+select{
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: 300px;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+
+fieldset {
+  margin-bottom: 30px;
+  border: none;
+}
+
+legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+
+
+label.light {
+  font-weight: 300;
+  display: inline;
+}
+
+.number {
+  background-color: #5fcf80;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  border-radius: 100%;
+}
+
+@media screen and (min-width: 480px) {
+
+  form {
+	max-width: 480px;
+  }
+
+}
+
+form {
+    max-width: 40%;
+	margin-top: 30%;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+	
+  }
+
+.col-md-12{
+	margin-top: 0%;
+
+}
+
+.login{
+	margin-bottom: 30%;
+}
+
+.search ul{
+	list-style-type: none;
+}
+
+
+.apply a{
+	display:block;
+	height:80px;
+	width:250px;
+	background: linear-gradient(
+		#9365ff,
+		#6f3bff
+	);
+	position:absolute;
+	margin:auto;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	place-items: center;
+	letter-spacing: 3px;
+
+}
+
+/* socials */
+
+

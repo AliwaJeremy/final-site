@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block a_unique_name %}{% endblock %}
+{% load static %}
+
+
+    {% block content %}
+        <div class="banner">
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <div class="banner_content">
+                <h1>Welcome to ACK St. Martin's Wendani
+                </h1>
+                <p>The church</p>
+            </div>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        </div>
+        
+        <div class="info" id="info" style = "background-color: #cff1e9";>
+            <h1 class="title">Church Leaders</h1>
+            <p>These are our dedicated church leaders</p>
+    
+            <div class="leaders">
+                <div class="leader_individual">
+                    <img src="{% static 'images\vicar.png' %}" alt="Vicar">
+                    <h3>VICAR</h3>
+                    <p>Name:</p><br/>
+                    <p>Mobile Number:</p><br/>
+                    <p>Email:</p>
+                </div>
+                <div class="leader_individual">
+                    <img src="{% static 'images\vicars_warden.png' %}" alt="Vicar's Warden">
+                    <h3>VICAR'S WARDEN</h3>
+                    <p>Name:</p><br/>
+                    <p>Mobile Number:</p><br/>
+                    <p>Email:</p>
+                </div>
+                <div class="leader_individual">
+                    <img src="{% static 'images\peoples_warden.png' %}" alt="Peoples' warden">
+                    <h3>PEOPLE'S WARDEN</h3>
+                    <p>Name:</p><br/>
+                    <p>Mobile Number:</p><br/>
+                    <p>Email:</p>
+                </div>
+            </div>
+        </div>
+    
+        
+        
+    
+        <div class="services" id="services" style="background-image: url('{% static 'images\ack1.png' %}')"; style =  "background-color: #cff1e9 "; >
+            <h2 class="title">SERVICES</><br/><br/><br/>
+              <h2 class="day">SUNDAY SERVICES</h2><br/><br/>
+              <h3 class="dept">Youth : 7:15am - 8:30am </h3><br/>
+              <h3 class="dept">Teens : 8:30am - 9:00am</h3><br/>
+              <h3 class="dept">First Service : 9:00am - 11:00am</h3><br/>
+              <h3 class="dept">Second Service : 11:00am - 1:00pm</h3><br/>
+              <h2 class="day">MIDDWEEK</h2><br/>
+              <h3 class="dept">Wednesday : 6:00pm - 7:00pm</h3><br/>
+        </div>
+    
+   
+        <div class="info" id="info" style = "background-color: #cff1e9;">
+            <h1 class="title">Departments</h1>
+            <p>We have a number of departments where members can congregate</p>
+    
+            <div class="leaders">
+                <div class="leader_individual">
+                    <a href="{% url 'mu' %}">
+                        <img src="{% static 'images\mothers_union.png' %}" alt="MU">
+                        <h3>Mother's Union</h3>
+                        </a>
+                </div>
+                <div class="leader_individual">
+                    <a href="{% url 'kama' %}">
+                        <img src="{% static 'images\youth.png' %}" alt="kama">
+                        <h3>KAMA</h3>
+                        </a>
+                </div>
+                <div class="leader_individual">
+                    <a href="{% url 'youth' %}">
+                        <img src="{% static 'images\youth.png' %}" alt="youth">
+                        <h3>Youth</h3>
+                        </a>
+                </div>
+            </div>
+            <div class="leaders">
+                <div class="leader_individual">
+                    <a href="{% url 'teens' %}">
+                        <img src="{% static 'images\teens.png' %}" alt="teens">
+                        <h3>Teens</h3>
+                        </a>
+                </div>
+                <div class="leader_individual">
+                    <a href="{% url 'sundayschool' %}">
+                        <img src="{% static 'images\sunday.png' %}" alt="sunday">
+                        <h3>Sunday School</h3>
+                        </a>
+                </div>
+            </div>
+        </div>
+        
+
+    
+    {% endblock %}
+    
+
+</html>

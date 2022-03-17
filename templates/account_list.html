@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+    {% block content %} 
+    <body>
+    <div class="info" style = "background: #d8dbdb;"  >
+      <div class="col-md-12">
+    <center>  <BR/><BR/>
+      {% if messages %}
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} m-2" id="msg" role="alert">
+                {{ message }}
+                </div>
+                {% endfor %}
+                {% endif %}
+
+         
+          <h5>ACK ST. MARTIN'S ACCOUNTS</h5>
+          <hr>
+          <div class="card card-body">
+            
+            <table class="table table-sm">
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Membership Number</th>
+                <th>Update</th>
+                <th>Dependents</th>
+                <th>Group</th>
+                <th>Delete</th>
+
+              </tr>
+      
+              {% for Account in List %}
+                <tr>
+                  <td>{{Account.first_name}}</td>
+                  <td>{{Account.last_name}}</td>
+                  <td>{{Account.email}}</td>
+                  <td>{{Account.membership_number}}</td>
+                  <td><a class="btn btn-sm btn-info" href="{% url 'account_edit' Account.id %}">Update</a></td>
+                  <td><a class="btn btn-sm btn-info" href="{% url 'dependent_register' Account.id %}">Register</a></td>
+                  <td><a class="btn btn-sm btn-info" href="{% url 'update_group' Account.id %}">Change</a></td>
+                  <td><a class="btn btn-sm btn-danger" href="{% url 'delete_individual' Account.id %}">Delete</a></td>
+      
+                </tr>
+              {% endfor %}
+      
+          
+            </table>
+         
+         <h2><a href="{% url 'superuser_home' %}">go back<i class="fa-solid fa-arrow-right"></i></a></h2>
+         {% for message in messages %}
+                  <div style="color:green">
+                  {{message}}
+                  </div>
+                  {% endfor %}
+      
+          </div>
+    
+                </center>
+              </div>
+            </div>
+            </body>
+    {% endblock %}
+   
+  
+
+

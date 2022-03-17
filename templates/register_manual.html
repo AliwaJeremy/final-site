@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+        {% block content %}
+    
+      <div class="row">
+    <div class="col-md-12" id="col-md-12" style = "background-color: #cff1e9;">
+      <br/><br/><br/><br/>
+      <form method="post" class = "post-form" action=""  id = "submit">
+
+        {% csrf_token %}
+        <h1> Register Member</h1>
+        <div class="fieldWrapper">
+          {% if form.errors %}
+                  <div class="alert alert-danger">
+                      <strong>User not registered, check for errors below</strong>
+                  </div>
+            {% endif %}
+        
+       {% for field in form %}
+    <div class="fieldWrapper">
+          {% for error in field.errors %}
+              <div class="alert alert-danger">
+                  <strong>{{ field.errors }}</strong>
+              </div>
+        {% endfor %}
+        {{ field.label_tag }} {{ field }}
+    </div>
+{% endfor %}
+<div class="fieldWrapper">
+  {% if form.errors %}
+          <div class="alert alert-danger">
+              <strong>User not registered, check for errors below</strong>
+          </div>
+    {% endif %}
+       
+       
+        <button type="submit">Register</button>
+       </form>
+      
+     
+        </div>
+      </div>
+      {% endblock %}
+    </body>
+</html>

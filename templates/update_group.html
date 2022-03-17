@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_filters %}
+        {% block content %}
+    
+      <div class="info">
+    
+    <div class="col-md-12" id="col-md-12" style = "background-color: #cff1e9;">
+      <br/><br/><br/><br/>
+      <form method="post" class = "post-form" action=""  id = "submit" >
+
+        {% csrf_token %}
+        <h3>Update Group</h3>
+        
+       {% for field in form %}
+       <div class="fieldWrapper">
+             {% for error in field.errors %}
+                 <div class="alert alert-danger">
+                     <strong>{{ field.errors }}</strong>
+                 </div>
+           {% endfor %}
+           {{ field.label_tag }} {{ field }}
+       </div>
+   {% endfor %}
+    
+        <button type="submit">Update Group</button>
+        
+        
+       </form>
+        </div>
+      </div>
+      {% endblock %}
+    </body>
+</html>

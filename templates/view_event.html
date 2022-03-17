@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles\styles.css' %}">
+</head>
+<body>
+    {% block content %}
+    <div class="about" id="about" style="background-image: url('{% static 'images\image1.png' %}')">
+    <center>  
+      
+       <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+      
+      
+        
+         <table border = 1>
+           <tr>
+             <th>Event Name</th>
+             <th>Date</th>
+             <th>Group</th>
+           </tr>
+           
+              {% for Event in List %}
+              <tr>
+               <td>{{ Event.name }}</td>
+               <td>{{ Event.date }}</td> 
+               <td>{{ Event.group }}</td>
+               
+              </tr>
+              
+              {% endfor %}
+           
+         </table>
+         <h2><a href="{% url 'superuser_home' %}">go back</a></h2>
+         {% for message in messages %}
+                  <div style="color:green">
+                  {{message}}
+                  </div>
+                  {% endfor %}
+      
+          
+                  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    
+                </div>
+                </center>
+    {% endblock %}
+   
+  
+</body>
+</html>
+
+

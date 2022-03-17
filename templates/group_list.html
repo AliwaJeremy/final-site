@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles\styles.css' %}">
+</head>
+<body>
+    {% block content %}
+    <br/><br/><br/><br/>
+  <center>  
+    <h1>
+        accounts
+    </h1>
+    
+      
+       <table border = 1>
+         <tr>
+           <th>Name</th>
+         </tr>
+         Remove all members first
+            {% for Department in List %}
+            <tr>
+             <td>{{ Department.name }}</td>
+             <td><a href = "{% url 'delete_dept' Department.id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+           
+       </table>
+       <h2><a href="{% url 'superuser_home' %}">go back</a></h2>
+       {% for message in messages %}
+                <div style="color:red">
+                {{message}}
+                </div>
+                {% endfor %}
+    
+        
+
+
+    {% endblock %}
+    </center> 
+</body>
+</html>
